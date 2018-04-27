@@ -65,10 +65,6 @@ const Title = styled.h1`
   @media (max-width: 750px) {
     font-size: 80px;
   }
-
-  @media (max-width: 540px) {
-    // font-size: 54px;
-  }
 `
 
 const Subtitle = styled.h3`
