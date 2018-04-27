@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  background-color: #fdfffc;
+}
+
+a {
+  color: #fb3640;
+  text-decoration: none;
+  transition: 250ms;
+}
+
+a:hover {
+  color: #fb3640;
+}
+
+/* ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+} */
+
+p {
+  line-height: 1.2;
+}
