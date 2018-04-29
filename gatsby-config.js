@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Mark Foster'
+    title: 'Mark Foster',
+    siteUrl: `https://markadamfoster.com`
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -39,6 +40,13 @@ module.exports = {
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-102370279-1`
+      }
+    },
+    `gatsby-plugin-sitemap`
   ]
 }
