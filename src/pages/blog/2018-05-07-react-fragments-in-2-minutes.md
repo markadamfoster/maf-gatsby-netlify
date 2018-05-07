@@ -5,6 +5,8 @@ date: 2018-05-07T22:19:32.920Z
 description: '  '
 tags:
   - React
+  - Technical
+  - Coding
 ---
 Sometimes there are topics I hear about and want to dig into, but don't have time to right away. 
 
