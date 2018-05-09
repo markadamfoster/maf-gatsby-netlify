@@ -18,8 +18,9 @@ export default PortfolioListItem
 
 const Wrapper = styled.div`
   display: block;
-  max-width: 300px;
-  margin: 5px;
+  width: 30%;
+  max-width: 100%;
+  margin-bottom: 30px;
   text-decoration: none;
   color: black;
   text-align: center;

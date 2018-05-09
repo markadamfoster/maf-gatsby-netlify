@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { colors, MAX_CONTENT_WIDTH } from 'Constants'
 import heroImgSrc from 'img/home/banner.jpg'
 import profilePicSrc from 'img/home/family.jpg'
+import Title from './_Title'
 
 class Hero extends Component {
   static propTypes = {
@@ -19,9 +20,9 @@ class Hero extends Component {
       <Wrapper>
         <HeroImage image={heroImgSrc}>
           <Content>
-            <Title>Mark Foster</Title>
+            <Title />
             <Subtitle>
-              👋 Hi! I'm a developer & digital maker in Boise, USA
+              👋 Hi! I'm a web & moble developer in Boise, USA
             </Subtitle>
           </Content>
         </HeroImage>
@@ -54,17 +55,6 @@ const Content = styled.div`
   margin: 0 auto;
   text-align: center;
   margin-top: -50px;
-`
-
-const Title = styled.h1`
-  color: white;
-  font-size: 120px;
-  margin: 0;
-  line-height: 1;
-
-  @media (max-width: 750px) {
-    font-size: 80px;
-  }
 `
 
 const Subtitle = styled.h3`

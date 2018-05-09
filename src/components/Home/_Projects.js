@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import get from 'lodash/get'
+import Link from 'gatsby-link'
 
 import { projectData } from 'components/Projects/ProjectData'
 import ProjectItem from 'components/Projects/_ProjectListItem'
@@ -20,7 +21,12 @@ class Projects extends Component {
 
     return (
       <Wrapper>
-        <Title>Projects</Title>
+        <TitleWrapper>
+          <Title>Recent Projects</Title>
+          <SeeAll to="/projects">
+            See All <span className="fa fa-chevron-right" />
+          </SeeAll>
+        </TitleWrapper>
 
         <Row>
           <ProjectItem project={photoInvoice} />
@@ -40,8 +46,24 @@ const Wrapper = styled.section`
   margin: 0 auto;
 `
 
+const TitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 const Title = styled.h2`
   font-size: 54px;
+`
+
+const SeeAll = styled(Link)`
+  margin-left: 20px;
+  font-size: 20px;
+  margin-top: 22px;
+
+  span {
+    font-size: 16px;
+    margin-left: 3px;
+  }
 `
 
 const SectionTitleWrapper = styled.div`

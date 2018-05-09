@@ -15,7 +15,7 @@ export const projectData = [
     name: 'Photo Invoice',
     slug: 'photo-invoice',
     cover: photoInvoiceCover,
-    subtitle: 'Upfront Invoicing for Photographers.',
+    subtitle: 'Upfront Invoicing for Photographers',
     summary:
       'The best way for real estate photographers to invoice clients. A React-based web application featuring integration with Stripe and Amazon S3.',
     badges: ['react', 'redux', 'styled-components', 'html']

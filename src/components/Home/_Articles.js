@@ -13,8 +13,7 @@ class Articles extends Component {
     return (
       <Wrapper>
         <Title>Articles</Title>
-        <ComingSoon>Coming soon!</ComingSoon>
-        {/* {posts
+        {posts
           .filter(post => post.node.frontmatter.templateKey === 'blog-post')
           .map(({ node: post }) => (
             <PostWrapper key={post.id}>
@@ -27,7 +26,7 @@ class Articles extends Component {
                 <Link to={post.fields.slug}>Keep Reading →</Link>
               </ReadMore>
             </PostWrapper>
-          ))} */}
+          ))}
       </Wrapper>
     )
   }
@@ -73,4 +72,6 @@ const ReadMore = styled.div`
   margin-top: 10px;
 `
 
-const ComingSoon = styled.div``
+const ComingSoon = styled.div`
+  margin-bottom: 50px;
+`
