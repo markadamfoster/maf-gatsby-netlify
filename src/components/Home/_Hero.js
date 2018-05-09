@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import { colors, MAX_CONTENT_WIDTH } from 'Constants'
 import heroImgSrc from 'img/home/banner.jpg'
 import profilePicSrc from 'img/home/family.jpg'
-import Title from './_Title'
 
 class Hero extends Component {
   static propTypes = {
@@ -20,10 +19,15 @@ class Hero extends Component {
       <Wrapper>
         <HeroImage image={heroImgSrc}>
           <Content>
-            <Title />
-            <Subtitle>
-              👋 Hi! I'm a web & moble developer in Boise, USA
-            </Subtitle>
+            <CopyTop>👋 Hi! I'm a developer and maker in Boise, USA.</CopyTop>
+
+            <Copy>
+              I'm currently focusing on two things:
+              <ul>
+                <li>growing as a React & React Native developer</li>
+                <li>earning my first $1,000/mo from side projects</li>
+              </ul>
+            </Copy>
           </Content>
         </HeroImage>
         <ProfilePic src={profilePicSrc} />
@@ -40,36 +44,48 @@ const HeroImage = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(${props => props.image});
   background-size: cover;
   background-position: 100% 100%;
-  padding: 30px;
+  padding: 20px;
   margin-bottom: ${props => (props.marginBottom ? props.marginBottom : '0')};
   height: 420px;
 `
 
 const Content = styled.div`
-  width: ${MAX_CONTENT_WIDTH};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
   margin-top: -50px;
+  color: white;
 `
 
-const Subtitle = styled.h3`
-  margin-top: 20px;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 1.6;
-  color: white;
+const CopyTop = styled.h2`
+  font-size: 38px;
 
-  @media (max-width: 900px) {
-    font-size: 24px;
+  @media (max-width: 560px) {
+    font-size: 28px;
+  }
+`
+
+const Copy = styled.div`
+  font-weight: 400;
+  width: 420px;
+  max-width: 100%;
+  font-size: 20px;
+  line-height: 1.6;
+
+  @media (max-width: 560px) {
+    font-size: 16px;
   }
 
-  @media (max-width: 750px) {
-    font-size: 22px;
+  li {
+    text-align: left;
   }
 `
 

@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 
 import logoImgSrc from 'img/home/family.jpg'
-import nameScriptSrc from 'img/home/mark-foster-script.svg'
+import nameScriptSrc from 'img/home/mark-foster-script.png'
 import { colors, MAX_CONTENT_WIDTH } from 'Constants'
 
 class Navbar extends Component {
@@ -11,7 +11,7 @@ class Navbar extends Component {
     return (
       <Wrapper>
         <LogoArea>
-          <Logo src={logoImgSrc} />
+          {/* <Logo src={logoImgSrc} /> */}
           <Name src={nameScriptSrc} />
         </LogoArea>
         <NavLinks>
