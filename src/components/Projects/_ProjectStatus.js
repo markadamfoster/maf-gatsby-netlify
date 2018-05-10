@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 class ProjectStatus extends Component {
   static propTypes = {
-    status: PropTypes.String
+    status: PropTypes.string
   }
 
   render() {
