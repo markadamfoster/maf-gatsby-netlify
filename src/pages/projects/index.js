@@ -41,11 +41,12 @@ class Projects extends Component {
         <Title>Projects</Title>
 
         <ProjectsWrapper>
-          <PortfolioItem project={panoractives} />
-          <PortfolioItem project={leapCharities} />
-          <PortfolioItem project={brookside} />
-          <PortfolioItem project={adminConsole} />
           <PortfolioItem project={photoInvoice} />
+          <PortfolioItem project={panoractives} />
+          <PortfolioItem project={brookside} />
+          <PortfolioItem project={leapCharities} />
+          <PortfolioItem project={adminConsole} />
+
           <PortfolioItem project={showAndTour} />
         </ProjectsWrapper>
       </Wrapper>

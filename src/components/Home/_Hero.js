@@ -22,10 +22,10 @@ class Hero extends Component {
             <CopyTop>👋 Hi! I'm a developer and maker in Boise, USA.</CopyTop>
 
             <Copy>
-              I'm currently focusing on two things:
+              <em>I'm currently focusing on two things:</em>
               <ul>
-                <li>growing as a React & React Native developer</li>
                 <li>earning my first $1,000/mo from side projects</li>
+                <li>leveling up as a React developer</li>
               </ul>
             </Copy>
           </Content>
@@ -61,12 +61,16 @@ const Content = styled.div`
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  margin-top: -50px;
+  margin-top: -100px;
   color: white;
 `
 
 const CopyTop = styled.h2`
-  font-size: 38px;
+  font-size: 48px;
+
+  @media (max-width: 1080px) {
+    font-size: 38px;
+  }
 
   @media (max-width: 560px) {
     font-size: 28px;
@@ -75,13 +79,21 @@ const CopyTop = styled.h2`
 
 const Copy = styled.div`
   font-weight: 400;
-  width: 420px;
+  text-align: left;
+  // width: 420px;
   max-width: 100%;
   font-size: 20px;
   line-height: 1.6;
 
   @media (max-width: 560px) {
     font-size: 16px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    margin-left: 22px;
   }
 
   li {

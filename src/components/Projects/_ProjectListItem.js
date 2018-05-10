@@ -1,23 +1,33 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-const PortfolioListItem = ({ project }) => {
-  return (
-    <Wrapper>
-      <Link to={`/projects/${project.slug}`}>
-        <Cover src={project.cover} />
-      </Link>
-      <Title>{project.name}</Title>
-      <Subtitle>{project.subtitle}</Subtitle>
-    </Wrapper>
-  )
+import ProjectStatus from './_ProjectStatus'
+
+class PortfolioListItem extends Component {
+  render() {
+    const { project } = this.props
+
+    return (
+      <Wrapper>
+        <Link to={`/projects/${project.slug}`}>
+          <Cover src={project.cover} />
+        </Link>
+        <Title>
+          {project.name}
+          <ProjectStatus status={project.status} />
+        </Title>
+        <Subtitle>{project.subtitle}</Subtitle>
+      </Wrapper>
+    )
+  }
 }
 
 export default PortfolioListItem
 
 const Wrapper = styled.div`
   display: block;
+  position: relative;
   width: 30%;
   max-width: 100%;
   margin-bottom: 30px;
@@ -44,6 +54,9 @@ const Cover = styled.img`
 `
 
 const Title = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: 400;
   font-size: 22px;
   margin-top: 5px;
@@ -58,6 +71,8 @@ const Title = styled.div`
 `
 
 const Subtitle = styled.div`
+  text-align: left;
+  margin-top: 3px;
   font-size: 14px;
   font-weight: 300;
 `
