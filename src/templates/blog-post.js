@@ -6,6 +6,8 @@ import Link from 'gatsby-link'
 import Content, { HTMLContent } from '../components/Content'
 import styled from 'styled-components'
 
+import Tags from '../components/Posts/_Tags'
+
 export const BlogPostTemplate = ({
   content,
   contentComponent,
@@ -20,19 +22,13 @@ export const BlogPostTemplate = ({
     <Wrapper>
       {helmet || ''}
 
-      <h1>{title}</h1>
+      <Title>{title}</Title>
       <p>{description}</p>
       <PostContent content={content} />
       {tags && tags.length ? (
         <div style={{ marginTop: `4rem` }}>
           <h4>Tags</h4>
-          <ul className="taglist">
-            {tags.map(tag => (
-              <li key={tag + `tag`}>
-                <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-              </li>
-            ))}
-          </ul>
+          <Tags tags={tags} includeLinks={true} />
         </div>
       ) : null}
     </Wrapper>
@@ -87,8 +83,12 @@ export const pageQuery = graphql`
 
 const Wrapper = styled.section`
   width: 800px;
-  max-width: 100%;
+  max-width: 90%;
   margin: 50px auto;
+
+  @media (max-width: 600px) {
+    margin: 20px auto 40px;
+  }
 
   img {
     width: 100%;
@@ -96,5 +96,13 @@ const Wrapper = styled.section`
 
   p {
     line-height: 1.4;
+  }
+`
+
+const Title = styled.h1`
+  font-size: 3em;
+
+  @media (max-width: 600px) {
+    font-size: 2em;
   }
 `

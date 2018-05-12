@@ -1,30 +1,48 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import Link from 'gatsby-link'
+import { kebabCase } from 'lodash'
 
 import TagIcon from './_TagIcon'
+import { colors } from 'Constants'
 
 class Tags extends Component {
   static propTypes = {
-    tags: PropTypes.array
+    tags: PropTypes.array,
+    includeLinks: PropTypes.bool
   }
 
-  renderTag(tagName) {
-    return <Tag>tagName</Tag>
+  static defaultProps = {
+    includeLinks: false
+  }
+
+  renderTag(tag) {
+    const { tags, includeLinks } = this.props
+
+    return (
+      <Tag showHoverColor={includeLinks}>
+        <TagIcon size="16" style={{ marginRight: 3 }} /> {tag}
+      </Tag>
+    )
   }
 
   render() {
-    const { tags } = this.props
+    const { tags, includeLinks } = this.props
 
-    return (
-      <Wrapper>
-        {tags.map(tag => (
-          <Tag key={tag}>
-            <TagIcon size="16" style={{ marginRight: 3 }} /> {tag}
-          </Tag>
-        ))}
-      </Wrapper>
-    )
+    if (includeLinks) {
+      return (
+        <Wrapper>
+          {tags.map(tag => (
+            <Link to={`/tags/${kebabCase(tag)}/`} key={tag}>
+              {this.renderTag(tag)}
+            </Link>
+          ))}
+        </Wrapper>
+      )
+    }
+
+    return <Wrapper>{tags.map(tag => this.renderTag(tag))}</Wrapper>
   }
 }
 
@@ -40,4 +58,9 @@ const Tag = styled.div`
   font-size: 13px;
   margin-right: 8px;
   color: #747373;
+  transition: color 250ms;
+
+  &:hover {
+    color: ${props => (props.showHoverColor ? colors.action : '#747373')};
+  }
 `

@@ -12,7 +12,9 @@ class Navbar extends Component {
       <Wrapper>
         <LogoArea>
           {/* <Logo src={logoImgSrc} /> */}
-          <Name src={nameScriptSrc} />
+          <Link to="/">
+            <Name src={nameScriptSrc} />
+          </Link>
         </LogoArea>
         <NavLinks>
           <NavLink to="/">Home</NavLink>
