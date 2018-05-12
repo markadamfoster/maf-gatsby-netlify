@@ -1,12 +1,11 @@
 ---
 templateKey: blog-post
 title: Exploring React's Updated Context API
-date: 2018-05-05T00:00:00-06:00
+date: 2018-05-05T06:00:00.000Z
 description: '  '
 tags:
-  - React
-  - Technical
   - Coding
+  - React
 ---
 ## What is it?
 

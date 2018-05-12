@@ -4,9 +4,8 @@ title: React Fragments in 2 Minutes
 date: 2018-05-07T22:19:32.920Z
 description: '  '
 tags:
-  - React
-  - Technical
   - Coding
+  - React
 ---
 Sometimes there are topics I hear about and want to dig into, but don't have time to right away. 
 
