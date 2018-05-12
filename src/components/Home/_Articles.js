@@ -57,10 +57,14 @@ const Link = styled(LinkStarter)`
   align-items: center;
   padding: 10px;
   border-radius: 4px;
-  transition: background-color;
+  transition: background-color 250ms, transform 100ms;
 
   &:hover {
     background-color: #fff3f4;
+  }
+
+  &:active {
+    transform: scale(0.98);
   }
 `
 

@@ -46,10 +46,14 @@ const Cover = styled.img`
   width: 100%;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
   border-radius: 5px;
-  transition: 300ms;
+  transition: transform 250ms;
 
   &:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(0.98);
   }
 `
 
