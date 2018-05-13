@@ -16,6 +16,16 @@ body {
   }
 }
 
+h1 {
+  font-size: 3em;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
 a {
   color: #fb3640;
   text-decoration: none;

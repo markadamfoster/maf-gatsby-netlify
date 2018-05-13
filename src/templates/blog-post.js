@@ -99,10 +99,4 @@ const Wrapper = styled.section`
   }
 `
 
-const Title = styled.h1`
-  font-size: 3em;
-
-  @media (max-width: 600px) {
-    font-size: 2em;
-  }
-`
+const Title = styled.h1``

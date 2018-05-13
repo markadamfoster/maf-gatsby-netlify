@@ -1,42 +1,34 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
+import styled from 'styled-components'
+
+import PostListEntry from 'components/Posts/_PostListEntry'
+import { MAX_CONTENT_WIDTH } from 'Constants'
 
 class TagRoute extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
-    const postLinks = posts.map(post => (
-      <li key={post.node.fields.slug}>
-        <Link to={post.node.fields.slug}>
-          <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
-        </Link>
-      </li>
-    ))
     const tag = this.props.pathContext.tag
     const title = this.props.data.site.siteMetadata.title
     const totalCount = this.props.data.allMarkdownRemark.totalCount
-    const tagHeader = `${totalCount} post${
+    const pageTitle = `${totalCount} post${
       totalCount === 1 ? '' : 's'
-    } tagged with “${tag}”`
+    } tagged with “${tag}”:`
 
     return (
-      <section className="section">
+      <Wrapper>
         <Helmet title={`${tag} | ${title}`} />
-        <div className="container content">
-          <div className="columns">
-            <div
-              className="column is-10 is-offset-1"
-              style={{ marginBottom: '6rem' }}
-            >
-              <h3 className="title is-size-4 is-bold-light">{tagHeader}</h3>
-              <ul className="taglist">{postLinks}</ul>
-              <p>
-                <Link to="/tags/">Browse all tags</Link>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        <h1>{pageTitle}</h1>
+        <PostsList>
+          {posts.map(({ node: post }) => (
+            <PostListEntry key={post.slug} post={post} />
+          ))}
+        </PostsList>
+        <p>
+          <Link to="/tags/">Browse all tags</Link>
+        </p>
+      </Wrapper>
     )
   }
 }
@@ -63,9 +55,24 @@ export const tagPageQuery = graphql`
           }
           frontmatter {
             title
+            templateKey
+            date(formatString: "MMMM DD, YYYY")
+            tags
           }
         }
       }
     }
   }
+`
+
+const Wrapper = styled.div`
+  width: ${MAX_CONTENT_WIDTH};
+  max-width: 90%;
+  margin: 0 auto;
+`
+
+const PostsList = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
 `
