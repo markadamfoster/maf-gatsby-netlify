@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import Link from 'gatsby-link'
 
-import { colors, MAX_CONTENT_WIDTH } from 'Constants'
+import { colors } from 'Constants'
 import heroImgSrc from 'img/home/banner.jpg'
 import profilePicSrc from 'img/home/family.jpg'
 
@@ -19,13 +20,16 @@ class Hero extends Component {
       <Wrapper>
         <HeroImage image={heroImgSrc}>
           <Content>
-            <CopyTop>👋 Hi! I'm a developer and maker in Boise, USA.</CopyTop>
+            <CopyTop>👋 Hi! I'm a developer in Boise, USA.</CopyTop>
 
             <Copy>
               <em>I'm currently focusing on two things:</em>
               <ul>
-                <li>earning my first $1,000/mo from side projects</li>
-                <li>leveling up as a React developer</li>
+                <li>getting to $1,000/mo from side projects</li>
+                <li>
+                  <Link to="/learning">leveling up</Link> my dev & business
+                  skills
+                </li>
               </ul>
             </Copy>
           </Content>
@@ -98,6 +102,11 @@ const Copy = styled.div`
 
   li {
     text-align: left;
+
+    a {
+      color: white;
+      border-bottom: 1px dotted white;
+    }
   }
 `
 
