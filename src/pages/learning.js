@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Helmet from 'react-helmet'
 
 import { MAX_CONTENT_WIDTH } from 'Constants'
-import { learningData } from 'Components/Learning/LearningData'
+import { learningData } from 'components/Learning/LearningData'
 import LearningItem from 'components/Learning/LearningItem'
 
 class LevelUp extends Component {
