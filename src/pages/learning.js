@@ -4,7 +4,8 @@ import styled from 'styled-components'
 import Helmet from 'react-helmet'
 
 import { MAX_CONTENT_WIDTH } from 'Constants'
-import LearningItem from 'components/Learning/_LearningItem'
+import { learningData } from 'Components/Learning/LearningData'
+import LearningItem from 'components/Learning/LearningItem'
 
 class LevelUp extends Component {
   static propTypes = {}
@@ -19,26 +20,18 @@ class LevelUp extends Component {
           resources I've been using lately.
         </p>
         <List>
-          <LearningItem
-            source="Frontend Masters"
-            name="Advanced React Patterns"
-            link="https://frontendmasters.com/courses/advanced-react-patterns/"
-            status="inProgress"
-          />
-          <LearningItem
-            source="Udemy"
-            name="GraphQL with React"
-            link="https://www.udemy.com/graphql-with-react-course/"
-            completedDate="May 2018"
-            status="complete"
-          />
-          <LearningItem
-            source="Egghead.io"
-            name="The Beginner's Guide to React"
-            link="https://egghead.io/courses/the-beginner-s-guide-to-reactjs"
-            completedDate="March 2018"
-            status="complete"
-          />
+          {learningData.map(item => {
+            return (
+              <LearningItem
+                key={item.name}
+                source={item.source}
+                name={item.name}
+                link={item.link}
+                status={item.status}
+                completedDate={item.completedDate}
+              />
+            )
+          })}
         </List>
       </Wrapper>
     )
@@ -56,4 +49,5 @@ const Wrapper = styled.div`
 const List = styled.ul`
   margin-top: 30px;
   list-style: none;
+  padding-left: 0;
 `
