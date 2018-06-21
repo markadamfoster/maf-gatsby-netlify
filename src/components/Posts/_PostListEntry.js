@@ -60,7 +60,7 @@ const PostDate = styled.div`
   color: #757575;
 `
 
-const PostTitle = styled.h3`
+const PostTitle = styled.div`
   display: inline-block;
   margin: 5px 0 10px;
   font-size: 28px;

@@ -20,18 +20,11 @@ class Hero extends Component {
       <Wrapper>
         <HeroImage image={heroImgSrc}>
           <Content>
-            <CopyTop>👋 Hi! I'm a developer in Boise, USA.</CopyTop>
-
-            <Copy>
-              <em>I'm currently focusing on two things:</em>
-              <ul>
-                <li>getting to $1,000/mo from side projects</li>
-                <li>
-                  <Link to="/learning">leveling up</Link> my dev & business
-                  skills
-                </li>
-              </ul>
-            </Copy>
+            <CopyTop>👋 Hi! I'm Mark.</CopyTop>
+            <CopyBottom>
+              I build things. Usually with 💻 JavaScript, most often in ⛰ Boise,
+              USA.
+            </CopyBottom>
           </Content>
         </HeroImage>
         <ProfilePic src={profilePicSrc} />
@@ -54,7 +47,7 @@ const HeroImage = styled.div`
   background-position: 100% 100%;
   padding: 20px;
   margin-bottom: ${props => (props.marginBottom ? props.marginBottom : '0')};
-  height: 420px;
+  height: 500px;
 `
 
 const Content = styled.div`
@@ -70,7 +63,8 @@ const Content = styled.div`
 `
 
 const CopyTop = styled.h2`
-  font-size: 48px;
+  font-size: 87px;
+  margin-bottom: 20px;
 
   @media (max-width: 1080px) {
     font-size: 38px;
@@ -81,33 +75,8 @@ const CopyTop = styled.h2`
   }
 `
 
-const Copy = styled.div`
-  font-weight: 400;
-  text-align: left;
-  // width: 420px;
-  max-width: 100%;
-  font-size: 20px;
-  line-height: 1.6;
-
-  @media (max-width: 560px) {
-    font-size: 16px;
-  }
-
-  ul {
-    margin: 0;
-    padding: 0;
-    margin-top: 10px;
-    margin-left: 22px;
-  }
-
-  li {
-    text-align: left;
-
-    a {
-      color: white;
-      border-bottom: 1px dotted white;
-    }
-  }
+const CopyBottom = styled.div`
+  font-size: 22px;
 `
 
 const ProfilePic = styled.img`
