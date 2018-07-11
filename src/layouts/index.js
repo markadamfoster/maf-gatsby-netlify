@@ -8,6 +8,7 @@ import Footer from 'components/Footer'
 import 'styles/normalize.css'
 import 'styles/styles.css'
 import 'font-awesome/css/font-awesome.css'
+import 'styles/prismjs/prism-tomorrow.css'
 
 class TemplateWrapper extends Component {
   render() {
