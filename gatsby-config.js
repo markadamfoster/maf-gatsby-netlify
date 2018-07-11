@@ -23,6 +23,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-resolve-src',
+    'gatsby-plugin-twitter',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
