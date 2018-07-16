@@ -6,17 +6,19 @@ import PostListEntry from 'components/Posts/_PostListEntry'
 
 class Articles extends Component {
   static propTypes = {
-    data: PropTypes.object
+    posts: PropTypes.array,
   }
 
   render() {
-    const posts = this.props.data.allMarkdownRemark.edges
+    const { posts } = this.props
+
     return (
       <Wrapper>
         <Title>Articles</Title>
         <PostsList>
           {posts
             .filter(post => post.node.frontmatter.templateKey === 'blog-post')
+            .filter(post => post.node.frontmatter.published)
             .map(({ node: post }) => (
               <PostListEntry key={post.slug} post={post} />
             ))}

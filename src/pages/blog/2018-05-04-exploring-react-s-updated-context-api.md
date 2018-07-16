@@ -2,24 +2,26 @@
 templateKey: blog-post
 title: Exploring React's Updated Context API
 date: 2018-05-05T06:00:00.000Z
-description: '  '
+description: ''
+published: true 
 tags:
   - Coding
   - React
 ---
+
 ## What is it?
 
 In v16.3, React included a new Context API, aimed at making it easier to pass data down to children that are multiple levels deep. From the official React docs:
 
 > Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 
-If you are in the React world for very long, you ineviably witness a lot of conversations about state management, since it is both crucial and tricky. Redux has served as the community's primary state management solution for a couple years now. However, lately there has been a push to encourage folks to hold off from using Redux until it's truely necessary. Yes, the benefits are very real, but you don't need it on every project. 
+If you are in the React world for very long, you ineviably witness a lot of conversations about state management, since it is both crucial and tricky. Redux has served as the community's primary state management solution for a couple years now. However, lately there has been a push to encourage folks to hold off from using Redux until it's truely necessary. Yes, the benefits are very real, but you don't need it on every project.
 
 This is one of the reasons React's new Context API is especially exciting. It lengthens the runway even further before it is necessary to add a state management library to your project. It gives us (within vanilla React) a way to access & manage state in way that works well across an entire applicaiton, including child components in very different parts of the component tree.
 
 ## Implementation
 
-Let's pretend we have an app that users can log into, and we need information about the currently logged in user throughout the app. This is a perfect candidate for using Context. Lets pretend the user info we want to make available looks like this: 
+Let's pretend we have an app that users can log into, and we need information about the currently logged in user throughout the app. This is a perfect candidate for using Context. Lets pretend the user info we want to make available looks like this:
 
 ![data structure](/img/contextapi-01-data-structure.png)
 
@@ -31,17 +33,15 @@ The first thing we need to do is create a new context. this is done via the `Rea
 
 ### Step 2: Create a Provider Component
 
-The provider is the component that contains the shared data (as well as, we'll see later, the methods to manipulate that data). 
+The provider is the component that contains the shared data (as well as, we'll see later, the methods to manipulate that data).
 
 Major items to notice:
 
-1. returns a component in the form of: `<ContextName.Provider>`
-2. component renders `{this.props.children}`
-3. passes down a `value` prop. This is how you can make data that can later be accessed by the other components that will need it.
+1.  returns a component in the form of: `<ContextName.Provider>`
+2.  component renders `{this.props.children}`
+3.  passes down a `value` prop. This is how you can make data that can later be accessed by the other components that will need it.
 
 ![Sample provider component](/img/contextapi-03-provider.png)
-
-
 
 ### Step 3. Wrap your app with the provider
 
@@ -53,8 +53,6 @@ In order to make the provider accessible farther down the tree, your app will ne
 
 Now the fun part! Within the Provider, we can add a consumer that will give us access to the data we want to display (using the render prop pattern):
 
- 
-
 ![A sample consumer](/img/contextapi-05-consumer.png)
 
 We have just one more step left: updating the data from within our consumer component.
@@ -63,21 +61,15 @@ We have just one more step left: updating the data from within our consumer comp
 
 In order to update data from within your consumer component, you can pass down functions in the provider's value prop, like so:
 
- 
-
 ![A provider with an updater method](/img/contextapi-06-provider-w-updater.png)
 
 Your consumer can then access these functions by referencing `this.context`:
-
- 
 
 ![A consumer using the updater method](/img/contextapi-07-consumer-w-updater.png)
 
 Not too bad! I'm not someone who picks up on new patterns immediately, but after watching the video from Wes Bos and manually typing all this out a couple times, it sank in pretty darn quickly.
 
 ## The Whole Thing:
-
- 
 
 ![All sample code](/img/contextapi-08-all.png)
 

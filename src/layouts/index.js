@@ -8,7 +8,8 @@ import Footer from 'components/Footer'
 import 'styles/normalize.css'
 import 'styles/styles.css'
 import 'font-awesome/css/font-awesome.css'
-import 'styles/prismjs/prism-tomorrow.css'
+// import 'styles/prismjs-gatsby-line-highlighting.css'
+import 'styles/prismjs-theme.css'
 
 class TemplateWrapper extends Component {
   render() {

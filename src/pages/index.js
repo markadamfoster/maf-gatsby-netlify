@@ -7,16 +7,15 @@ export default class IndexPage extends React.Component {
   static propTypes = {
     data: PropTypes.shape({
       allMarkdownRemark: PropTypes.shape({
-        edges: PropTypes.array
-      })
-    })
+        edges: PropTypes.array,
+      }),
+    }),
   }
 
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { edges: posts } = this.props.data.allMarkdownRemark
 
-    return <HomePage data={data} />
+    return <HomePage posts={posts} />
   }
 }
 
@@ -33,6 +32,7 @@ export const pageQuery = graphql`
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")
+            published
             tags
           }
         }

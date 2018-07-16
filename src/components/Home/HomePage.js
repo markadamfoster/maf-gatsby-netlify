@@ -1,21 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
 
 import Hero from './_Hero'
 import Projects from './_Projects'
 import Articles from './_Articles'
 
 export default class HomePage extends React.Component {
+  static propTypes = {
+    posts: PropTypes.array,
+  }
+
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { posts } = this.props
 
     return (
       <main>
         <Hero />
         <Projects />
-        <Articles data={data} />
+        <Articles posts={posts} />
       </main>
     )
   }

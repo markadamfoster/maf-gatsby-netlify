@@ -2,12 +2,14 @@
 templateKey: blog-post
 title: React Fragments in 2 Minutes
 date: 2018-05-07T22:19:32.920Z
-description: '  '
+description: ''
+published: true
 tags:
   - Coding
   - React
 ---
-Sometimes there are topics I hear about and want to dig into, but don't have time to right away. 
+
+Sometimes there are topics I hear about and want to dig into, but don't have time to right away.
 
 Then my mind starts to play tricks on me and it somehow becomes more and more difficult to return to them later. I just keep putting it off. It festers, and it takes waaayyyyy longer than it should before I finally set aside time for it. Then I realize it was pretty darn simple and I should have just knocked it out right away.
 

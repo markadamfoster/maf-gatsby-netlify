@@ -35,6 +35,10 @@ h1 {
   }
 }
 
+h2 {
+  margin-top: 2em;
+}
+
 a {
   color: #fb3640;
   text-decoration: none;
@@ -53,9 +57,4 @@ a:hover {
 
 p {
   line-height: 1.2;
-}
-
-code {
-  background-color: #e8e8e8;
-  font-size: 0.9em;
 }
