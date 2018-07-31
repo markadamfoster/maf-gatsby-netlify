@@ -22,10 +22,12 @@ class Projects extends Component {
     return (
       <Wrapper>
         <TitleWrapper>
-          <Title>Recent Projects</Title>
-          <SeeAll to="/projects">
-            See All <span className="fa fa-chevron-right" />
-          </SeeAll>
+          <Title>
+            Recent Projects
+            <SeeAll to="/projects">
+              See All <span className="fa fa-chevron-right" />
+            </SeeAll>
+          </Title>
         </TitleWrapper>
 
         <Row>
@@ -59,6 +61,7 @@ const SeeAll = styled(Link)`
   margin-left: 20px;
   font-size: 20px;
   margin-top: 22px;
+  font-weight: 400;
 
   span {
     font-size: 16px;
