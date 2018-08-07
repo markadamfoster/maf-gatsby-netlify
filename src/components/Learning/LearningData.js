@@ -13,9 +13,17 @@ export const learningData = [
   },
   {
     source: 'Frontend Masters',
+    name: 'JavaScript: The Hard Parts',
+    link: 'https://frontendmasters.com/courses/javascript-hard-parts/',
+    completedDate: '08/07/2018',
+    status: 'complete',
+  },
+  {
+    source: 'Frontend Masters',
     name: 'Advanced React Patterns',
     link: 'https://frontendmasters.com/courses/advanced-react-patterns/',
-    status: 'inProgress',
+    completedDate: '06/01/2018',
+    status: 'complete',
   },
   {
     source: 'Udemy',
