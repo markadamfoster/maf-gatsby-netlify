@@ -6,16 +6,17 @@ status:
 
 export const learningData = [
   {
-    source: 'Frontend Masters',
-    name: 'JavaScript: From Fundamentals to Functional JS, v2',
-    link: 'https://frontendmasters.com/courses/js-fundamentals-functional-v2/',
-    status: 'inProgress',
-  },
-  {
     name: 'React Native Animations',
     source: 'Code Daily',
     link: 'https://reactnativeanimations.com/',
     status: 'inProgress',
+  },
+  {
+    source: 'Frontend Masters',
+    name: 'JavaScript: From Fundamentals to Functional JS, v2',
+    link: 'https://frontendmasters.com/courses/js-fundamentals-functional-v2/',
+    completedDate: '09/10/2018',
+    status: 'complete',
   },
   {
     source: 'Frontend Masters',
