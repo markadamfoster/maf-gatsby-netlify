@@ -6,10 +6,17 @@ status:
 
 export const learningData = [
   {
+    name: 'Complete Intro to React v4',
+    source: 'Frontend Masters',
+    link: 'https://frontendmasters.com/courses/complete-react-v4',
+    status: 'inProgress',
+  },
+  {
     name: 'React Native Animations',
     source: 'Code Daily',
     link: 'https://reactnativeanimations.com/',
-    status: 'inProgress',
+    status: 'complete',
+    completedDate: '09/25/2018',
   },
   {
     source: 'Frontend Masters',
