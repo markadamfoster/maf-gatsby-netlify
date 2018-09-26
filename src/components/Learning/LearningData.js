@@ -6,6 +6,12 @@ status:
 
 export const learningData = [
   {
+    name: 'AWS Serverless APIs & Apps - A Complete Introduction',
+    source: 'Udemy',
+    link: 'https://www.udemy.com/aws-serverless-a-complete-introduction/',
+    status: 'inProgress',
+  },
+  {
     name: 'Complete Intro to React v4',
     source: 'Frontend Masters',
     link: 'https://frontendmasters.com/courses/complete-react-v4',
