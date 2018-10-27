@@ -49,12 +49,11 @@ a:hover {
   color: #fb3640;
 }
 
-/* ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-} */
-
 p {
   line-height: 1.2;
+}
+
+ul,
+ol {
+  line-height: 1.5;
 }

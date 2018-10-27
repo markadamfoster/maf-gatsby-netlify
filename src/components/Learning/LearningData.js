@@ -6,6 +6,12 @@ status:
 
 export const learningData = [
   {
+    name: 'CSS Grid',
+    source: 'Wes Bos',
+    link: 'https://cssgrid.io/',
+    status: 'inProgress',
+  },
+  {
     name: 'AWS Serverless APIs & Apps - A Complete Introduction',
     source: 'Udemy',
     link: 'https://www.udemy.com/aws-serverless-a-complete-introduction/',
