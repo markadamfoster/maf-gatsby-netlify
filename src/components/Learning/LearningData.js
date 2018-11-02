@@ -6,12 +6,6 @@ status:
 
 export const learningData = [
   {
-    name: 'CSS Grid',
-    source: 'Wes Bos',
-    link: 'https://cssgrid.io/',
-    status: 'inProgress',
-  },
-  {
     name: 'AWS Serverless APIs & Apps - A Complete Introduction',
     source: 'Udemy',
     link: 'https://www.udemy.com/aws-serverless-a-complete-introduction/',
@@ -22,6 +16,13 @@ export const learningData = [
     source: 'Frontend Masters',
     link: 'https://frontendmasters.com/courses/complete-react-v4',
     status: 'inProgress',
+  },
+  {
+    name: 'CSS Grid',
+    source: 'Wes Bos',
+    link: 'https://cssgrid.io/',
+    status: 'complete',
+    completedDate: '11/2/2018',
   },
   {
     name: 'React Native Animations',
